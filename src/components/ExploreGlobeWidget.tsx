@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { animate, motion, useMotionValue, type MotionValue } from "framer-motion";
+import { AnimatePresence, animate, motion, useMotionValue, type MotionValue } from "framer-motion";
 import * as THREE from "three";
 import { SectionCard } from "./ui";
 import { exploreDemoCountries, type CountryData } from "../data/exploreCountries";
@@ -37,6 +37,27 @@ type GlobeSceneProps = {
 };
 
 const TAU = Math.PI * 2;
+const THREE_CLOCK_DEPRECATION_WARNING = "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.";
+
+const previousThreeConsoleFunction = THREE.getConsoleFunction?.();
+THREE.setConsoleFunction?.((type, message, ...params) => {
+  if (type === "warn" && message === THREE_CLOCK_DEPRECATION_WARNING) {
+    return;
+  }
+
+  if (previousThreeConsoleFunction) {
+    previousThreeConsoleFunction(type, message, ...params);
+    return;
+  }
+
+  if (type === "error") {
+    console.error(message, ...params);
+  } else if (type === "warn") {
+    console.warn(message, ...params);
+  } else {
+    console.log(message, ...params);
+  }
+});
 
 function supportsWebGl() {
   try {
@@ -253,13 +274,13 @@ function GlobeScene({
     }
   }, [useFallbackSphere]);
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     if (globeGroupRef.current) {
-      globeGroupRef.current.rotation.x = THREE.MathUtils.damp(globeGroupRef.current.rotation.x, rotationX.get(), 7, state.clock.getDelta());
-      globeGroupRef.current.rotation.y = THREE.MathUtils.damp(globeGroupRef.current.rotation.y, rotationY.get(), 7, state.clock.getDelta());
+      globeGroupRef.current.rotation.x = THREE.MathUtils.damp(globeGroupRef.current.rotation.x, rotationX.get(), 7, delta);
+      globeGroupRef.current.rotation.y = THREE.MathUtils.damp(globeGroupRef.current.rotation.y, rotationY.get(), 7, delta);
 
       if (!isAnimating && !selectedCountry) {
-        globeGroupRef.current.rotation.y += state.clock.getDelta() * 0.16;
+        globeGroupRef.current.rotation.y += delta * 0.16;
       }
     }
 
@@ -272,7 +293,7 @@ function GlobeScene({
     }
 
     if (cloudsRef.current) {
-      cloudsRef.current.rotation.y += state.clock.getDelta() * 0.035;
+      cloudsRef.current.rotation.y += delta * 0.035;
       cloudsRef.current.rotation.x = globeGroupRef.current?.rotation.x || 0;
     }
 
