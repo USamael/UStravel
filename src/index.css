@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  background: #050816;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background: #050816;
+    overscroll-behavior: none;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background:
+      radial-gradient(circle at top, rgba(94, 234, 212, 0.08), transparent 24%),
+      linear-gradient(160deg, #050816 0%, #09111f 45%, #020617 100%);
+    overscroll-behavior: none;
+    touch-action: manipulation;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Arial Nova", "Avenir Next Condensed", "Trebuchet MS", sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  .tablet-app-shell {
+    min-height: 100dvh;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.45);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+  }
+
+  .leaflet-container {
+    background: #020617;
+    font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  }
+
+  .leaflet-control-attribution {
+    background: rgba(2, 6, 23, 0.72) !important;
+    color: #cbd5e1 !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .leaflet-control-attribution a {
+    color: #99f6e4 !important;
+  }
+
+  .maplibregl-map {
+    background: #020617;
+    font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  }
+
+  .maplibregl-ctrl-group {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.28) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .maplibregl-ctrl-group button {
+    background: transparent !important;
+  }
+
+  .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+    filter: invert(1) brightness(1.4);
+  }
+
+  .maplibregl-ctrl-attrib {
+    border-radius: 16px !important;
+    background: rgba(2, 6, 23, 0.72) !important;
+    color: #cbd5e1 !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .maplibregl-ctrl-attrib a {
+    color: #99f6e4 !important;
+  }
+
+  .travel-arc {
+    animation: route-flow 14s linear infinite;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 8px rgba(94, 234, 212, 0.22));
+  }
+
+  .travel-arc-teal {
+    stroke-dasharray: 10 10;
+  }
+
+  .travel-arc-gold {
+    stroke-dasharray: 12 12;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.22));
+  }
+}
+
+@keyframes route-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -320;
+  }
+}

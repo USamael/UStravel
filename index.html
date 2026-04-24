@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#050816" />
+    <meta name="application-name" content="Seyahat Günlüğüm" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Seyahat Günlüğüm" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="/icons/pwa-icon-512.png" />
+    <link
+      rel="apple-touch-startup-image"
+      href="/splash/splash-landscape.png"
+      media="(orientation: landscape)"
+    />
+    <title>Seyahat Günlüğüm</title>
+    <style>
+      .app-shell-splash {
+        align-items: center;
+        background:
+          radial-gradient(circle at 24% 18%, rgba(20, 184, 166, 0.28), transparent 30%),
+          radial-gradient(circle at 78% 72%, rgba(245, 158, 11, 0.2), transparent 34%),
+          #050816;
+        color: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        font-family: Georgia, "Times New Roman", serif;
+        gap: 18px;
+        min-height: 100vh;
+        justify-content: center;
+        letter-spacing: -0.04em;
+      }
+
+      .app-shell-splash__icon {
+        height: 112px;
+        width: 112px;
+      }
+
+      .app-shell-splash__title {
+        font-size: clamp(2.5rem, 7vw, 6.5rem);
+        font-weight: 700;
+      }
+
+      .app-shell-splash__detail {
+        color: #94a3b8;
+        font-family: Arial, sans-serif;
+        font-size: clamp(0.78rem, 1.8vw, 1.1rem);
+        letter-spacing: 0.42em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="app-shell-splash" aria-label="Seyahat Günlüğüm başlangıç ekranı">
+        <img class="app-shell-splash__icon" src="/icons/pwa-icon-512.png" alt="" />
+        <div class="app-shell-splash__title">Seyahat Günlüğüm</div>
+        <div class="app-shell-splash__detail">Rotalar • Notlar • Hatıralar</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

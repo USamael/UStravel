@@ -1,0 +1,11 @@
+<svg width="2732" height="2048" viewBox="0 0 2732 2048" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="2732" height="2048" fill="#050816"/>
+  <circle cx="668" cy="425" r="470" fill="#0F766E" fill-opacity="0.28"/>
+  <circle cx="2118" cy="1546" r="540" fill="#B45309" fill-opacity="0.22"/>
+  <path d="M394 1214C732 736 1055 602 1380 744C1705 886 2024 718 2338 292" stroke="#5EEAD4" stroke-width="38" stroke-linecap="round"/>
+  <path d="M458 1301C786 884 1094 744 1390 886C1672 1022 1953 900 2236 536" stroke="#FBBF24" stroke-width="24" stroke-linecap="round" stroke-dasharray="2 68"/>
+  <path d="M1366 540C1247 540 1150 637 1150 756C1150 918 1366 1162 1366 1162C1366 1162 1582 918 1582 756C1582 637 1485 540 1366 540Z" fill="#E2E8F0"/>
+  <circle cx="1366" cy="757" r="79" fill="#050816"/>
+  <text x="1366" y="1438" text-anchor="middle" fill="#F8FAFC" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="700">Seyahat Günlüğüm</text>
+  <text x="1366" y="1526" text-anchor="middle" fill="#94A3B8" font-family="Arial, sans-serif" font-size="48" letter-spacing="10">ROTALAR • NOTLAR • HATIRALAR</text>
+</svg>

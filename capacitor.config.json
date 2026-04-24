@@ -1,0 +1,12 @@
+{
+  "appId": "com.seyahatgunlugum.app",
+  "appName": "Seyahat Günlüğüm",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#050816"
+  }
+}

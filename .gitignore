@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Vite and local caches
+.vite/
+.vite-temp/
+.cache/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local Android/JDK tooling
+.android-sdk/
+.jdks/
+.gradle/
+
+# Android generated and local files
+android/.gradle/
+android/**/build/
+android/local.properties
+android/capacitor-cordova-android-plugins/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+android/app/src/main/res/xml/config.xml
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Codex/local workspace files
+.codex/
+.codex
